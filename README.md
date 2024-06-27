@@ -1,4 +1,10 @@
-# Calculadora-MonitoriaGit
-Projeto da Monitoria Git
-Calculadora capaz de realizar qualquer tipo de operação
-BEM SOLID
+# Ideia da Calculadora sendo um PseudoAssembly
+
+<b>Pontos positivos:</b>
+- Alta escalabilidade
+- Fácil de usar
+- Sem paradigmas de quantidades de operandos
+
+<b>Pontos negativos:</b>
+- Implementação ligeiramente complicada
+- Muitas gambiarras para simular o stack
