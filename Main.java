@@ -15,8 +15,8 @@ private static Scanner scan = new Scanner(System.in);
         //
         HashFuncs hashfuncs = new HashFuncs();
         HashMap< String, BiFunction<Double, Double, Double> > mapSimples = hashfuncs.inciarBaseMap();
-        HashMap< String, Function<Double[], Double> > mapComplex = hashfuncs.iniciarComplexMap();
-
+        //HashMap< String, Function<Double[], Double> > mapComplex = hashfuncs.iniciarComplexMap();
+        // Não sei se será necessário
         
         ArrayList<String> txt = arquivo.getTxt();
         txt.forEach((element) -> { 
@@ -28,8 +28,17 @@ private static Scanner scan = new Scanner(System.in);
             }
         });
 
-        System.out.println(tokens);
+        ArrayList<Double> result = new ArrayList<>();
+        for (int i = 0; i < tokens.size(); i++) {
+            if (mapSimples.get(tokens.get(i)) != null) {
+                result.add(mapSimples.get(tokens.get(i)).apply(
+                    Double.parseDouble(tokens.get(i+1)), 
+                    Double.parseDouble(tokens.get(i+2))
+                    ));
+            }
+        }
 
+        System.out.println(result);
 
         scan.close();
     }
